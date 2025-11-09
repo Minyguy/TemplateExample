@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>TemplateExample</AssemblyName>
+    <RootNamespace>ModularUpgrades.TemplateExample</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>embedded</DebugType>
+    <Nullable>enable</Nullable>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    
+    <!-- Ostranauts installation directory -->
+    <OstranautsPath Condition="'$(OstranautsPath)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Ostranauts</OstranautsPath>
+    <GameManagedPath>$(OstranautsPath)\Ostranauts_Data\Managed</GameManagedPath>
+    <BepInExPath>$(OstranautsPath)\BepInEx</BepInExPath>
+    
+    <!-- Output to BepInEx plugins folder -->
+    <OutputPath>$(BepInExPath)\plugins\ModularUpgrades\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- BepInEx References -->
+    <Reference Include="BepInEx">
+      <HintPath>$(BepInExPath)\core\BepInEx.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(BepInExPath)\core\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+
+    <!-- Ostranauts Game Assembly -->
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(GameManagedPath)\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+
+    <!-- Unity Engine References -->
+    <Reference Include="UnityEngine">
+      <HintPath>$(GameManagedPath)\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(GameManagedPath)\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TextMeshPro">
+      <HintPath>$(GameManagedPath)\TextMeshPro-5.6-Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Include Shared utilities -->
+  <ItemGroup>
+    <Compile Include="..\..\Shared\*.cs" Link="Shared\%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>
+
+

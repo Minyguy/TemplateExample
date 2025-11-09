@@ -1,0 +1,7 @@
+{
+    "name": "TestMod",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/thunderstore-io",
+    "description": "This is a description for a mod. 250 characters max",
+    "dependencies": []
+}
