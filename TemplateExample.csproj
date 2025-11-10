@@ -29,10 +29,12 @@
       <IncludeAssets>compile</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="HarmonyX" Version="2.15.0">
-      <IncludeAssets>compile</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
+
+    <!-- Harmony from BepInEx installation -->
+    <Reference Include="0Harmony">
+      <HintPath>$(BepInExPath)\core\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
 
     <!-- LaunchControl dependency - check multiple locations -->
     <!-- 1. Direct project reference (local development) -->
