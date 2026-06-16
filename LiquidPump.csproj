@@ -4,7 +4,7 @@
     <TargetFramework>net35</TargetFramework>
     <AssemblyName>LiquidPump</AssemblyName>
     <RootNamespace>Ostranauts.LiquidPump</RootNamespace>
-    <LangVersion>0.1.0</LangVersion>
+    <LangVersion>1.0.0</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DebugType>embedded</DebugType>
     <Nullable>enable</Nullable>
